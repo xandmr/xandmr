@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sana Özel ❤️</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .heart-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 60px;
+    }
+
+    .heart {
+      font-size: 100px;
+      color: red;
+      animation: pulse 1.5s infinite;
+    }
+
+    .cs-inside {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 8px #c00, 0 0 2px #c00;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .message {
+      font-size: 24px;
+      margin: 30px auto;
+      color: #4a004a;
+      max-width: 80%;
+      line-height: 1.6;
+    }
+
+    .floating-heart {
+      position: absolute;
+      animation: floatUp 5s infinite;
+      color: red;
+      font-size: 24px;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-container">
+    <div class="heart">❤️</div>
+    <div class="cs-inside">C S</div>
+  </div>
+  <div class="message">
+    Bebeğim seni çok seviyorum ve çok özledim. <br>
+    Hep aklımdasın. <br>
+    Sonsuza kadar benimle ol... <br><br>
+    <strong>ÇOOOOOOK ÖZLENDİN ❤️</strong>
+  </div>
+
+  <!-- Kalpler -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
